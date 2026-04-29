@@ -1,0 +1,303 @@
+/* =====================
+   MetalTrade Pro — Elite Stylesheet
+   Use with: index.html, mission.html, trading-tips.html, market-insights.html
+   ===================== */
+
+/* ---------- Theme variables ---------- */
+:root{
+  --bg-dark: #0f1724;        /* deep navy */
+  --bg-mid:  #121826;
+  --card-bg: rgba(255,255,255,0.03);
+  --glass: rgba(255,255,255,0.04);
+  --muted: #9aa6b2;
+  --text: #e6eef6;
+  --accent-gold: #d4af37;
+  --accent-gold-2:#f4d03f;
+  --accent-blue: #2ea3f2;
+  --success: #27ae60;
+  --danger:  #e74c3c;
+  --glass-border: rgba(255,255,255,0.06);
+  --glass-blur: 8px;
+  --radius: 12px;
+  --max-width: 1200px;
+  --shadow-1: 0 6px 20px rgba(2,6,23,0.6);
+  --shadow-2: 0 12px 40px rgba(2,6,23,0.7);
+  --transition: 280ms cubic-bezier(.2,.9,.2,1);
+  --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, 'Roboto Mono', monospace;
+}
+
+/* ---------- Reset & base ---------- */
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family: "Inter", "Segoe UI", system-ui, -apple-system, Roboto, "Helvetica Neue", Arial;
+  background: linear-gradient(180deg,var(--bg-dark) 0%, #071027 60%);
+  color:var(--text);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  line-height:1.5;
+  min-height:100vh;
+}
+
+/* Container */
+.container{
+  max-width:var(--max-width);
+  margin:0 auto;
+  padding:0 20px;
+}
+
+/* ---------- Navigation ---------- */
+.navbar{
+  backdrop-filter: blur(8px);
+  background: linear-gradient(180deg, rgba(10,14,20,0.6), rgba(6,9,14,0.35));
+  border-bottom: 1px solid var(--glass-border);
+  position:sticky;
+  top:0;
+  z-index:1000;
+  box-shadow: var(--shadow-1);
+}
+.nav-container{
+  max-width:var(--max-width);
+  margin:0 auto;
+  padding:14px 20px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+}
+.logo{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  color:var(--accent-gold);
+  font-weight:700;
+  letter-spacing:0.6px;
+  font-size:1.15rem;
+}
+.logo-icon{font-size:1.6rem}
+.nav-menu{display:flex;gap:18px;list-style:none;margin:0;padding:0;align-items:center}
+.nav-menu a{
+  color:rgba(255,255,255,0.88);
+  text-decoration:none;
+  font-weight:600;
+  padding:6px 8px;
+  border-radius:8px;
+  transition:all 200ms ease;
+  font-size:0.98rem;
+}
+.nav-menu a:hover,
+.nav-menu a.active{
+  color:var(--bg-mid);
+  background: linear-gradient(90deg,var(--accent-gold),var(--accent-gold-2));
+  box-shadow: 0 6px 18px rgba(212,175,55,0.12);
+}
+
+/* Mobile menu (if added) */
+.menu-toggle{display:none}
+
+/* ---------- Hero ---------- */
+.hero{
+  position:relative;
+  padding:90px 20px;
+  min-height:420px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  overflow:hidden;
+}
+.hero::after{
+  content:'';
+  position:absolute;inset:0;
+  background:
+    radial-gradient(ellipse at 10% 10%, rgba(212,175,55,0.06), transparent 15%),
+    radial-gradient(ellipse at 90% 80%, rgba(46,163,242,0.04), transparent 15%);
+  pointer-events:none;
+}
+.hero-content{position:relative;z-index:2;max-width:920px}
+.hero h1{
+  font-size:2.8rem;
+  margin:0 0 .75rem 0;
+  color:var(--text);
+  text-shadow: 0 6px 32px rgba(2,6,23,0.6);
+}
+.hero p{
+  margin:0 0 1.6rem;
+  color:rgba(230,238,246,0.9);
+  font-size:1.05rem;
+  opacity:0.95;
+}
+
+/* CTA buttons */
+.cta-buttons{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.btn-primary, .btn-secondary{
+  border:0;padding:12px 28px;border-radius:10px;font-weight:700;cursor:pointer;
+  transition:all var(--transition);
+}
+.btn-primary{
+  background: linear-gradient(135deg,var(--accent-gold),var(--accent-gold-2));
+  color: #061427;
+  box-shadow: 0 12px 30px rgba(212,175,55,0.12), 0 2px 8px rgba(0,0,0,0.4);
+}
+.btn-primary:hover{transform:translateY(-4px);filter:brightness(1.03)}
+.btn-secondary{
+  background:transparent;color:var(--text);border:1px solid rgba(255,255,255,0.08);
+}
+.btn-secondary:hover{background:rgba(255,255,255,0.03);transform:translateY(-3px)}
+
+/* ---------- Price Cards & Grid ---------- */
+.prices-section{padding:64px 20px 88px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01))}
+.prices-section h2{text-align:center;margin-bottom:.35rem}
+.subtitle{text-align:center;color:var(--muted);margin-bottom:1.4rem}
+#last-update{color:var(--accent-gold);font-weight:700}
+
+.prices-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:22px;
+  max-width:var(--max-width);
+  margin:30px auto 0;
+}
+
+/* card base */
+.price-card{
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border-radius:var(--radius);
+  overflow:hidden;
+  border:1px solid var(--glass-border);
+  box-shadow: var(--shadow-1);
+  transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+  display:flex;flex-direction:column;
+}
+.price-card:hover{
+  transform:translateY(-10px);
+  box-shadow: var(--shadow-2);
+  border-color: rgba(212,175,55,0.18);
+}
+
+/* metal header */
+.metal-header{
+  padding:18px 20px;
+  display:flex;justify-content:space-between;align-items:center;font-weight:700;
+  color: #071427;
+}
+.gold-bg{ background: linear-gradient(135deg,#f8e5a4,#d4af37 60%); }
+.silver-bg{ background: linear-gradient(135deg,#f2f4f6,#c7c9cb 60%); color:#222; }
+.platinum-bg{ background: linear-gradient(135deg,#f6f7f8,#e6e6e6 60%); color:#222; }
+.palladium-bg{ background: linear-gradient(135deg,#dfe6ea,#8f9599 60%); color:#222; }
+
+.price-content{ padding:20px 22px 28px; display:flex;flex-direction:column; gap:12px; }
+.price-display{ display:flex;align-items:baseline;gap:8px;font-size:1.9rem;font-weight:800;color:var(--text) }
+.currency{ color:var(--accent-gold); font-size:1.1rem; font-weight:800; }
+.amount{ color:var(--accent-gold); letter-spacing:0.6px; }
+.unit{ color:var(--muted); font-size:0.95rem; margin-left:6px; font-weight:600; }
+
+.price-change{ display:inline-flex; align-items:center; gap:8px; padding:8px 12px; border-radius:9px; font-weight:700; font-size:0.95rem; }
+.price-change.positive{ color:var(--success); background:linear-gradient(90deg, rgba(39,174,96,0.12), rgba(39,174,96,0.06)); }
+.price-change.negative{ color:var(--danger); background:linear-gradient(90deg, rgba(231,76,60,0.12), rgba(231,76,60,0.05)); }
+
+.price-stats{ display:flex; flex-wrap:wrap; gap:12px; color:var(--muted); font-size:0.92rem; background:rgba(5,8,12,0.025); padding:10px; border-radius:8px }
+
+/* ---------- Stats (banner) ---------- */
+.stats-section{ padding:50px 20px; margin-top:36px; }
+.stats-grid{
+  display:grid;
+  grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+  gap:18px;
+  max-width:var(--max-width);
+  margin:0 auto;
+}
+.stat-card{
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  padding:28px;border-radius:14px;border:1px solid var(--glass-border);
+  text-align:center; box-shadow: var(--shadow-1);
+}
+.stat-card h3{ color:var(--text); margin-bottom:8px;font-size:1rem }
+.stat-number{ font-size:2.6rem; color:var(--accent-gold); font-weight:800; text-shadow:0 6px 18px rgba(212,175,55,0.08) }
+
+/* ---------- Tips section ---------- */
+.featured-tips{ padding:64px 20px; background: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.00)) }
+.tips-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:20px; max-width:var(--max-width); margin:0 auto }
+.tip-card{
+  background: linear-gradient(180deg,#0d1720, rgba(255,255,255,0.01));
+  padding:22px; border-radius:12px; border:1px solid rgba(255,255,255,0.03);
+  box-shadow: 0 8px 24px rgba(2,6,23,0.55); position:relative; overflow:hidden;
+}
+.tip-number{
+  width:46px;height:46px;border-radius:50%;display:inline-grid;place-items:center;
+  background: linear-gradient(135deg,var(--accent-gold),var(--accent-gold-2));
+  color:#061427;font-weight:800;margin-bottom:10px;box-shadow:0 8px 20px rgba(212,175,55,0.12)
+}
+.tip-card h4{ color:var(--text); margin-bottom:8px; font-size:1.05rem }
+.tip-card p{ color:var(--muted); font-size:0.95rem; line-height:1.65 }
+
+/* ---------- Mission page styles ---------- */
+.mission-hero{ padding:70px 20px; text-align:center; background: linear-gradient(135deg,#0f1b2d, #122235); color:var(--text) }
+.mission-box{
+  margin:28px auto; max-width:920px; background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  padding:28px;border-radius:14px;border:1px solid var(--glass-border); box-shadow:var(--shadow-1)
+}
+.vision-pillars{ display:grid;gap:18px; grid-template-columns: repeat(auto-fit,minmax(240px,1fr)); margin-top:24px }
+.pillar-card{ background:linear-gradient(180deg,#071427,rgba(255,255,255,0.01)); border-radius:12px;padding:18px;border:1px solid rgba(255,255,255,0.02); box-shadow:var(--shadow-1) }
+.pillar-icon{ font-size:2.2rem; margin-bottom:8px; color:var(--accent-gold) }
+.pillar-card h3{ color:var(--accent-gold) }
+
+/* ---------- Insights & charts ---------- */
+.insights-main{ padding:60px 20px; background: linear-gradient(180deg, rgba(255,255,255,0.00), rgba(255,255,255,0.01)) }
+.outlook-cards{ display:grid; grid-template-columns: repeat(auto-fit,minmax(300px,1fr)); gap:18px }
+.outlook-card{ background: linear-gradient(180deg,#071427, rgba(255,255,255,0.02)); padding:18px;border-radius:12px;border:1px solid rgba(255,255,255,0.03); box-shadow:var(--shadow-1) }
+.chart-placeholder{ height:200px;border-radius:10px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); display:flex;align-items:center;justify-content:center;color:var(--muted) }
+
+/* ---------- Tables / quick reference ---------- */
+.reference-table{ width:100%; border-collapse:collapse;background:transparent; margin-top:16px }
+.reference-table th, .reference-table td{ padding:12px 14px; text-align:left; border-bottom:1px solid rgba(255,255,255,0.03); color:var(--muted) }
+.reference-table thead th{ color:var(--text); font-weight:700; background:transparent }
+
+/* ---------- Newsletter form ---------- */
+.newsletter-cta{ padding:44px 20px; background: linear-gradient(90deg, rgba(212,175,55,0.03), rgba(46,163,242,0.02)); border-radius:12px; margin:32px auto; max-width:980px }
+.newsletter-form{ display:flex; gap:12px; align-items:center; justify-content:center; padding:6px }
+.newsletter-form input[type="email"]{
+  flex:1; min-width:0; padding:12px 14px; border-radius:10px; border:1px solid rgba(255,255,255,0.06);
+  background: rgba(255,255,255,0.02); color:var(--text); outline:none; font-size:1rem;
+}
+.newsletter-form button{ padding:12px 18px; border-radius:10px; background: linear-gradient(135deg,var(--accent-gold),var(--accent-gold-2)); border:0; color:#061427; font-weight:700 }
+
+/* ---------- Footer ---------- */
+.footer{ padding:60px 20px 30px; background: linear-gradient(180deg,#071427,#061027); color:rgba(230,238,246,0.9) }
+.footer-content{ display:grid; grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); gap:26px; max-width:var(--max-width); margin:0 auto 16px; }
+.footer-section h4{ color:var(--accent-gold); margin-bottom:12px }
+.footer-bottom{ text-align:center; color:rgba(230,238,246,0.6); border-top:1px solid rgba(255,255,255,0.03); padding-top:18px; margin-top:18px }
+
+/* ---------- Utilities & small components ---------- */
+.badge{ display:inline-block;padding:6px 10px;border-radius:999px;background:rgba(255,255,255,0.03); color:var(--text); font-weight:700; font-size:0.9rem }
+.kv{ display:flex; gap:8px; align-items:center }
+.small{ font-size:0.86rem; color:var(--muted) }
+
+/* ---------- Animations ---------- */
+@keyframes floatUp{ from{ transform:translateY(8px); opacity:0 } to{ transform:none; opacity:1 } }
+.fade-in-up{ animation: floatUp 700ms cubic-bezier(.2,.9,.2,1) both }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 900px){
+  .hero h1{ font-size:2.2rem }
+  .hero p{ font-size:1rem }
+  .prices-grid{ gap:16px }
+  .nav-menu{ display:none } /* promote mobile menu if implemented */
+  .menu-toggle{ display:block }
+}
+@media (max-width: 520px){
+  .hero{ padding:36px 14px; min-height:320px }
+  .cta-buttons{ flex-direction:column }
+  .btn-primary, .btn-secondary{ width:100% }
+  .footer-content{ grid-template-columns:1fr }
+  .stat-number{ font-size:2.2rem }
+}
+
+/* ---------- Metal specific micro-style (for fine polish) ---------- */
+.price-card.gold-accent .amount{ color:#b8860b }
+.price-card.silver-accent .amount{ color:#7f8c8d }
+.price-card.platinum-accent .amount{ color:#8b8f91 }
+.price-card.palladium-accent .amount{ color:#6b7176 }
+
+/* End of styles.css */
