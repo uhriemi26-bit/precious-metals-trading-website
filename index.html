@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MetalTrade Pro - Live Precious Metals Trading</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <span class="logo-icon">💎</span>
+                <span class="logo-text">MetalTrade Pro</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="active">Live Prices</a></li>
+                <li><a href="mission.html">Our Mission</a></li>
+                <li><a href="trading-tips.html">Trading Tips</a></li>
+                <li><a href="market-insights.html">Market Insights</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Real-Time Precious Metals Trading</h1>
+            <p>Track, analyze, and trade the world's most valuable commodities</p>
+            <div class="cta-buttons">
+                <button class="btn-primary">Start Trading</button>
+                <button class="btn-secondary">Learn More</button>
+            </div>
+        </div>
+        <div class="hero-bg"></div>
+    </section>
+
+    <!-- Live Prices Section -->
+    <section class="prices-section">
+        <div class="container">
+            <h2>Live Market Prices</h2>
+            <p class="subtitle">Last updated: <span id="last-update">Loading...</span></p>
+            
+            <div class="prices-grid">
+                <!-- Gold -->
+                <div class="price-card">
+                    <div class="metal-header gold-bg">
+                        <span class="metal-name">Gold</span>
+                        <span class="metal-symbol">AU</span>
+                    </div>
+                    <div class="price-content">
+                        <div class="price-display">
+                            <span class="currency">$</span>
+                            <span class="amount" id="gold-price">2,495.50</span>
+                            <span class="unit">/oz</span>
+                        </div>
+                        <div class="price-change positive">
+                            <span class="arrow">▲</span>
+                            <span class="change">+2.45%</span>
+                        </div>
+                        <div class="price-stats">
+                            <p>24h High: $2,510.00</p>
+                            <p>24h Low: $2,440.25</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Silver -->
+                <div class="price-card">
+                    <div class="metal-header silver-bg">
+                        <span class="metal-name">Silver</span>
+                        <span class="metal-symbol">AG</span>
+                    </div>
+                    <div class="price-content">
+                        <div class="price-display">
+                            <span class="currency">$</span>
+                            <span class="amount" id="silver-price">29.75</span>
+                            <span class="unit">/oz</span>
+                        </div>
+                        <div class="price-change negative">
+                            <span class="arrow">▼</span>
+                            <span class="change">-1.22%</span>
+                        </div>
+                        <div class="price-stats">
+                            <p>24h High: $30.50</p>
+                            <p>24h Low: $29.20</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Platinum -->
+                <div class="price-card">
+                    <div class="metal-header platinum-bg">
+                        <span class="metal-name">Platinum</span>
+                        <span class="metal-symbol">PT</span>
+                    </div>
+                    <div class="price-content">
+                        <div class="price-display">
+                            <span class="currency">$</span>
+                            <span class="amount" id="platinum-price">1,095.00</span>
+                            <span class="unit">/oz</span>
+                        </div>
+                        <div class="price-change positive">
+                            <span class="arrow">▲</span>
+                            <span class="change">+1.85%</span>
+                        </div>
+                        <div class="price-stats">
+                            <p>24h High: $1,105.50</p>
+                            <p>24h Low: $1,075.00</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Palladium -->
+                <div class="price-card">
+                    <div class="metal-header palladium-bg">
+                        <span class="metal-name">Palladium</span>
+                        <span class="metal-symbol">PD</span>
+                    </div>
+                    <div class="price-content">
+                        <div class="price-display">
+                            <span class="currency">$</span>
+                            <span class="amount" id="palladium-price">945.30</span>
+                            <span class="unit">/oz</span>
+                        </div>
+                        <div class="price-change positive">
+                            <span class="arrow">▲</span>
+                            <span class="change">+3.15%</span>
+                        </div>
+                        <div class="price-stats">
+                            <p>24h High: $965.00</p>
+                            <p>24h Low: $920.50</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Stats -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <h3>Active Traders</h3>
+                    <p class="stat-number">15,847</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Daily Volume</h3>
+                    <p class="stat-number">$2.4B</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Metals Tracked</h3>
+                    <p class="stat-number">8+</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Uptime</h3>
+                    <p class="stat-number">99.9%</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Trading Tips -->
+    <section class="featured-tips">
+        <div class="container">
+            <h2>Today's Trading Tips</h2>
+            <div class="tips-grid">
+                <div class="tip-card">
+                    <span class="tip-number">1</span>
+                    <h4>Watch the Fed Announcements</h4>
+                    <p>Interest rate decisions significantly impact precious metal prices. Stay updated with Federal Reserve statements.</p>
+                </div>
+                <div class="tip-card">
+                    <span class="tip-number">2</span>
+                    <h4>Diversify Your Portfolio</h4>
+                    <p>Don't put all your investments in one metal. Spread risk across gold, silver, platinum, and palladium.</p>
+                </div>
+                <div class="tip-card">
+                    <span class="tip-number">3</span>
+                    <h4>Use Stop-Loss Orders</h4>
+                    <p>Protect your investments by setting stop-loss levels. This helps minimize potential losses during market volatility.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>MetalTrade Pro</h4>
+                    <p>Your trusted partner in precious metals trading since 2024.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Live Prices</a></li>
+                        <li><a href="mission.html">Mission</a></li>
+                        <li><a href="trading-tips.html">Trading Tips</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>Email: trading@metaltradepo.com</p>
+                    <p>Phone: +1 (800) METAL-99</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="#">Twitter</a>
+                        <a href="#">LinkedIn</a>
+                        <a href="#">Facebook</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 MetalTrade Pro. All rights reserved. Disclaimer: Not financial advice.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
